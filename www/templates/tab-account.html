@@ -1,0 +1,74 @@
+
+<body ng-app="starter">
+ <ion-view view-title="Inicio">
+   
+    <ion-pane>
+      <ion-content scroll="true">
+ 
+ 
+<div class = "row">
+
+ 
+          </div>
+ <!---HOME-->
+ <!---En la parte superior hay 4 imagenes con un boton debajo que las descibe, sirven para navegar entre la aplicaion-->
+<div class = "row">
+ 
+<div class = "col text-center">
+              <a href="#/tab/chats"><button class="boton"><img class="imagen" src="http://lh4.ggpht.com/fxlHbw4rOQS3bI2a_LO2riGDlQvL8WInpcPOc74w13y3eem9YZWhM-6HRoWBWs9CMng=w300"></button></a>
+           <div  class="enlace">  <a href="#/tab/agenda"> <button class = "button button-positive">Agenda</button></a> </div>
+
+            </div>
+
+<div class = "col text-center">
+              <a href="#/tab/chats"><button class="boton"><img class="imagen" src="http://png-1.findicons.com/files/icons/982/dellipack_2/256/people.png"></button></a>
+              <div  class="enlace">   <a href="#/tab/select"> <button class = "button button-balanced">Pacientes</button></a></div>
+
+            </div>
+
+<div class = "col text-center">
+              <a href="#/tab/chats"><button class="boton"><img class="imagen" src="http://icons.iconarchive.com/icons/cornmanthe3rd/metronome/512/Communication-email-blue-icon.png"></button></a>
+              <div  class="enlace">   <a href="mailto:direccion@dominio.com" > <button class = "button button-assertive">Correo</button></a></div>
+
+            </div>
+ 
+ 
+<div class = "col text-center">
+               <a href="#/tab/chats"><button class="boton"><img class="imagen" src="http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/chat-2-icon.png"></button></a>
+               <div  class="enlace">  <a href="#/tab/chats"> <button class = "button button-royal">Chats</button></a></div>
+            </div>
+
+          </div>
+  <!---En la parte de abajo hay un cuadro con texto de recordatorios, habra una liena en el cuadro dwe texto por cada instancia de firebase de la coleccion 
+        de toDOs, en la parte de arriba del cuadro de texto hay 2 botones, uno abre un popup para insertar una nueva entrada
+        el otro, muestra un boton que permite borrar de la base de datos esa entrada
+  -->
+<center>
+   <div class="card list" style="margin-top:5%; max-width:85%">
+                <div class="item item-divider">
+                      <div class="buttons">
+        
+                      <h1 class="title" style="font-size:200%">  Recordatorios 
+                      <button class="button button-icon icon ion-backspace" ng-click="showDelete = !showDelete" style="float:right"></button>
+                      <button class="button button-icon icon ion-compose" ng-click="agregar()" style="float:right"></button>
+                      </h1>
+                      </div>
+                </div>
+                <ion-scroll scrollx="true">
+                <div class="item item-text-wrap" style="height:200px">
+                      
+                              <ion-list show-delete="showDelete" class="list list-editing">
+                                      <ion-item ng-repeat="todo in toDos" class="item-icon-left item-button-right item-toggle item-icon-right">
+                                                <ion-delete-button class="ion-minus-circled" ng-click="eliminar(todo)"></ion-delete-button>
+                                                <h2>     {{ todo.name }}</h2>
+                                                <div class="toggle" ng-if="!showDelete"></div>
+                                      </ion-item>
+                               </ion-list>
+                       
+                 </div>
+            </div>    
+            </center> 
+      </ion-content>
+    </ion-pane>
+ </ion-view>
+  </body>

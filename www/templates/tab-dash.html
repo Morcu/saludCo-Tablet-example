@@ -1,0 +1,36 @@
+<!--->LOGIN
+  <-->
+
+<!--->Muestra al principio el logo de la aplicacion
+
+        Debajo del logo hay 2 cuadros de texto, uno para el nombre de usuario y otro para la Contraseña
+        debajo de los cuadros de texto hay 2 botones: boton de login para buscar el usuario y contraseña en la base de datos y entrar si esta bien
+        boton de registro que guarda los datos de nombre de usuario y contraseña en firebase
+  <-->
+
+<ion-view view-title="LogIn" >
+  <ion-content class="padding">
+      <div class = "col text-center">
+              <img class="logo" src="img/Logo.png">
+            </div>
+    <ion-list >
+        <center >
+         <div style="width: 80%;">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input ng-model="name" type="text" placeholder="Nombre de Usuario" />
+                </label>
+                <label class="item item-input">
+                    <input ng-model="password" type="password" placeholder="Contraseña" />
+                </label>
+            </div>
+            <div class="padding">
+                <button ng-click="logIn(name, password)" class="button button-block button-positive">Accede</button>
+                <button ng-click="submit(name, password)" class="button button-block button-dark">Registrate para acceder</button>
+               
+            </div>
+        </div>
+        </center>
+  </ion-list>
+  </ion-content>
+</ion-view>

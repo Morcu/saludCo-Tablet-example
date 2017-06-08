@@ -1,0 +1,57 @@
+<!---Ficha de paciente
+  <-->
+
+<!--->Cuando se clicka en un paciente.
+      Se mueestra en la parte superior izquierda la imagen asociada a ese paciente, a la derecha de la imagen se muetsran 3 campos de texto con:
+       su nombre, numero de la seguridad social y su edad.
+       Debajo hay otros 2 campos de texto que hacen referencia al diagnostico y las Alergias
+       Todos los campos se leen de firebase
+  <-->
+
+<ion-view view-title="Perfil Medico">
+
+    <ion-content class="has-header">
+        <div class="list card">
+
+            <div class="row">
+            <div class="col">
+              <div class="item item-body">
+                <center>
+                  <img style="max-height: 130px" src="{{image}}"/>
+                  </center>
+              </div>
+            </div>
+            <div class="col">
+              <ion-list>
+                <label class="item item-input">
+                  <p><b>Nombre</b>: {{name}}</p>
+                </label>
+                <label class="item item-input">
+                    <p><b>Seguridad Social</b>: {{id}}</p>
+                </label>
+                <label class="item item-input">
+                    <p>Edad: {{age}}</p>
+                </label>
+              </ion-list>
+
+            </div>
+
+          </div>
+         
+        </div>
+
+
+        </div>
+        <div class="list card">
+          <h4>   <a>Diagnóstico</a> "{{diagnostic}}"</h4>
+
+        </div>
+        <div class="list card">
+          <h4>   <a>Alergias</a> {{allergies}}</h4>
+
+        </div>
+
+    </ion-content>.
+
+
+</ion-view>

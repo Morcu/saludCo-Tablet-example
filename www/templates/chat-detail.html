@@ -1,0 +1,35 @@
+<!--
+Chat
+-->
+
+<!--
+Muestra una lista de mensajes que esta escrita en firebase en la coleccion de chat
+al final de la lista hay un cuadro de texto y un boton (enviar) 
+al escribir en el cuadro de texto y al dar al boton de enviar el mensaje se escribira en la base de datos y aparecera en la lista de mensajes
+-->
+
+<ion-view view-title="{{chat.name}}">
+  <ion-content>
+    
+
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="chat in chats">
+     
+        <h2>{{chat.user}}</h2>
+        <p>{{chat.message}}</p>
+      </a>
+    </div>
+    <form>
+      <div class="list">
+        <div class="item item-input-insert">
+ <label style="width: 83%; margin-right: 1%; float:left;" class="item item-input">
+                    <input  type="text" ng-model="chat.message" placeholder="Escribe aqui" />
+                      </label>
+                    <button style="width: 15%; margin-right: 1%; float:right;" ng-click="sendChat(chat)" class="button button-positive">Enviar</button>
+        </div>
+      </div>
+    </form>
+
+
+  </ion-content>
+</ion-view>

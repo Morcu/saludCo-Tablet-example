@@ -1,0 +1,56 @@
+   
+   
+<!--
+Agenda
+-->
+   
+   <ion-view >
+       
+     <ion-pane>
+<!--
+En la parte de arriba se muestra un calendario que se "monta" en el controlador asociado a la agenda
+-->
+
+  <ion-content>
+   <center style="
+    height: 310px;
+">
+<div >
+  <div  id="calendari"></div>
+  <footer><a href="http://boudra.me/">boudra.me</a></footer>
+</div>
+</center>
+
+<!---En la parte de abajo hay un cuadro con texto de citas, habra una liena en el cuadro de texto por cada instancia de firebase de la coleccion 
+        de agenda, en la parte de arriba del cuadro de texto hay 2 botones, uno abre un popup para insertar una nueva entrada
+        el otro, muestra un boton que permite borrar de la base de datos esa entrada -->
+
+<center>
+   <div class="card list" style="margin-top:1%; max-width:85%">
+                <div class="item item-divider">
+                      <div class="buttons">
+        
+                      <h1 class="title" style="font-size:200%">  Recordatorios 
+                      <button class="button button-icon icon ion-backspace" ng-click="showDelete = !showDelete" style="float:right"></button>
+                      <button class="button button-icon icon ion-compose" ng-click="agregar()" style="float:right"></button>
+                      </h1>
+                      </div>
+                </div>
+                <ion-scroll scrollx="true">
+                <div class="item item-text-wrap" style="height:200px">
+                      
+                              <ion-list show-delete="showDelete" class="list list-editing">
+                                      <ion-item ng-repeat="todo in agenda" class="item-icon-left item-button-right item-toggle item-icon-right">
+                                                <ion-delete-button class="ion-minus-circled" ng-click="eliminar(todo)"></ion-delete-button>
+                                                <h2 style="float: left">{{ todo.fecha }} - {{todo.hora}}</h2>
+                                                  <h2 style="float: right">{{ todo.descripcion }}</h2></br>
+                                                <div class="toggle" ng-if="!showDelete"></div>
+                                      </ion-item>
+                               </ion-list>
+                       
+                 </div>
+            </div>    
+            </center> 
+      </ion-content>
+    </ion-pane>
+ </ion-view>

@@ -1,0 +1,56 @@
+
+  <!--->Lista de pacientes
+  <-->
+  
+<!--->Muestra un cuadro de texto con los pacientes que estan en la coleccion de pacientes de firebase.
+      EN el cuadro de texto se muestra la imagen asociada al paciente un boton con su nombre y debajo un cuadro de texto con su diagnostico
+
+      En la parte superior del cuadro de texto hay 2 botones, 1 para agregar un nuevo paciente, que abrira un popup para introducir los datos y otroque permitira
+      eliminar pacientes
+
+      ambos botones se coordinan con la base de datos por lo que el cuadro de texto es dinamico con coherencia con firebase
+  <-->
+
+  <ion-view view-title="Pacientes">
+
+    <ion-content >
+
+<center>
+   <div class="card list" >
+                <div class="item item-divider">
+                   
+                      <div class="buttons">
+                      <button class="button button-icon icon ion-backspace" ng-click="showDelete = !showDelete">    Borrar</button>
+                      <button class="button button-icon icon ion-compose" ng-click="agregar()" >     Insertar</button>
+                     
+                      </div>
+                </div>
+                <ion-scroll scrollx="true">
+                <div class="item item-text-wrap" >
+                      
+                              <ion-list show-delete="showDelete" class="list list-editing">
+                                      
+                                       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="todo in pacientes" type="item-text-wrap" href="#/tab/select/{{todo.ss}}">
+                                      
+                                                <ion-delete-button class="ion-minus-circled" ng-click="eliminar(todo)"></ion-delete-button>
+                                              
+                                                  <a class="item item-thumbnail-left" href="#/tab/select/{{todo.ss}}">
+                                                      <img src={{todo.imagen}}>
+                                                      
+                                                      <button class="button button-full button-calm">
+                                                        {{todo.nombre}}
+                                                      </button>
+                                                      <p>{{todo.diagnostico}}</p>
+                                                  </a>
+                                                <div class="toggle" ng-if="!showDelete"></div>
+                                      </ion-item>
+                               </ion-list>
+                       
+                 </div>
+            </div>    
+            </center> 
+
+
+</ion-content>
+
+  </ion-view>
